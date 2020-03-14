@@ -2,7 +2,7 @@
 
 def get_primes(num):
     sieve = [True]*(num+1) ## create an array to check primes
-    for val in range(2,int((num)**1/2)):
+    for val in range(2,int((num)**1/2)+1):
         if sieve[val]: ## if the number is a prime 
             for mul in range(val*val,num+1,val): ## set all the multiples to false
                 sieve[mul] = False
