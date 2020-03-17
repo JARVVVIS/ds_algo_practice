@@ -7,15 +7,16 @@ def get_primes(num):
         if not lp[val]:
             lp[val] = val ## yeh prime hai aur iska sabse chota divisor yahi hai
             primes.append(val)
-        for j in primes:
-            if val*j<=num:
-                lp[val*j] = j
+        j=0
+        while j<len(primes) and val*primes[j]<=num and primes[j]<=lp[val]:
+            lp[val*primes[j]] = primes[j]
+            j+=1
     return primes
-
 
 def main():
     num = int(input())
     primes = get_primes(num)
+    print(primes)
 
 
 
